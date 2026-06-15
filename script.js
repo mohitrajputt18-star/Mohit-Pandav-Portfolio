@@ -96,7 +96,7 @@
     }
     resize();
 
-    const particleCount = isMobile ? 400 : 1200;
+    const particleCount = isMobile ? 600 : 1200;
     const particles = [];
 
     // Generate </> symbol shape target points
@@ -187,28 +187,28 @@
 
     // Mouse tracking
     const mouse = { x: -1000, y: -1000, active: false };
-    if (!isMobile) {
-      parent.addEventListener('mousemove', (e) => {
-        const rect = parent.getBoundingClientRect();
-        mouse.x = e.clientX - rect.left;
-        mouse.y = e.clientY - rect.top;
-        mouse.active = true;
+    parent.addEventListener('mousemove', (e) => {
+      if (window.innerWidth < 768) return;
+      const rect = parent.getBoundingClientRect();
+      mouse.x = e.clientX - rect.left;
+      mouse.y = e.clientY - rect.top;
+      mouse.active = true;
+    });
+    parent.addEventListener('mouseleave', () => {
+      mouse.active = false;
+    });
+    parent.addEventListener('click', () => {
+      if (window.innerWidth < 768) return;
+      // Explosion
+      particles.forEach(p => {
+        const dx = p.x - mouse.x;
+        const dy = p.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy) || 1;
+        const force = Math.min(15, 300 / dist);
+        p.vx += (dx / dist) * force;
+        p.vy += (dy / dist) * force;
       });
-      parent.addEventListener('mouseleave', () => {
-        mouse.active = false;
-      });
-      parent.addEventListener('click', () => {
-        // Explosion
-        particles.forEach(p => {
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const dist = Math.sqrt(dx * dx + dy * dy) || 1;
-          const force = Math.min(15, 300 / dist);
-          p.vx += (dx / dist) * force;
-          p.vy += (dy / dist) * force;
-        });
-      });
-    }
+    });
 
     let time = 0;
     let spawned = false;
@@ -262,7 +262,7 @@
         }
 
         // Mouse repulsion (desktop)
-        if (mouse.active && !isMobile) {
+        if (mouse.active && window.innerWidth >= 768) {
           const mdx = p.x - mouse.x;
           const mdy = p.y - mouse.y;
           const mDist = Math.sqrt(mdx * mdx + mdy * mdy);
@@ -329,15 +329,25 @@
 
     const canvas = document.getElementById('about-canvas');
     if (!canvas) return;
-
-    const size = isMobile ? 220 : 340;
-    const dpr = Math.min(window.devicePixelRatio, 2);
-    canvas.width = size * dpr;
-    canvas.height = size * dpr;
-    canvas.style.width = size + 'px';
-    canvas.style.height = size + 'px';
     const ctx = canvas.getContext('2d');
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    let size = canvas.clientWidth || (window.innerWidth < 768 ? 220 : 340);
+    const dpr = Math.min(window.devicePixelRatio, 2);
+
+    function resizeAboutCanvas() {
+      size = canvas.clientWidth || (window.innerWidth < 768 ? 220 : 340);
+      canvas.width = size * dpr;
+      canvas.height = size * dpr;
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    }
+
+    resizeAboutCanvas();
+
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(resizeAboutCanvas, 100);
+    });
 
     // Icosahedron vertices
     const phi = (1 + Math.sqrt(5)) / 2;
@@ -943,13 +953,6 @@
         hamburger.classList.toggle('open');
         mobileMenu.classList.toggle('open');
         document.body.style.overflow = mobileMenu.classList.contains('open') ? 'hidden' : '';
-
-        if (mobileMenu.classList.contains('open')) {
-          const links = mobileMenu.querySelectorAll('.mobile-link, .mobile-cta');
-          links.forEach((link, i) => {
-            link.style.transitionDelay = `${i * 80}ms`;
-          });
-        }
       });
     }
 
@@ -973,6 +976,83 @@
   };
 
   // ═══════════════════════════════════════════
+  // 13. MOBILE INTERACTIVE OVERLAYS & ACCORDIONS
+  // ═══════════════════════════════════════════
+  function initProjectCardsMobile() {
+    const cards = document.querySelectorAll('.card-wrapper');
+    cards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        if (window.innerWidth >= 768) return;
+
+        const closeBtn = e.target.closest('.card-back-close');
+        const ctaLink = e.target.closest('.card-back-cta');
+
+        if (closeBtn) {
+          e.stopPropagation();
+          card.classList.remove('active-overlay');
+          return;
+        }
+
+        if (ctaLink) {
+          return;
+        }
+
+        const isFlipped = card.classList.contains('active-overlay');
+        cards.forEach(c => c.classList.remove('active-overlay'));
+
+        if (!isFlipped) {
+          card.classList.add('active-overlay');
+        }
+      });
+    });
+  }
+
+  function initSkillsAccordion() {
+    const cards = document.querySelectorAll('.skill-card');
+    cards.forEach(card => {
+      const header = card.querySelector('.skill-card-header');
+      if (!header) return;
+
+      header.addEventListener('click', () => {
+        if (window.innerWidth >= 768) return;
+
+        const isExpanded = card.classList.contains('expanded');
+
+        cards.forEach(c => {
+          c.classList.remove('expanded');
+          const pills = c.querySelector('.skill-pills');
+          if (pills) {
+            pills.style.maxHeight = null;
+            pills.style.opacity = '0';
+          }
+        });
+
+        if (!isExpanded) {
+          card.classList.add('expanded');
+          const pills = card.querySelector('.skill-pills');
+          if (pills) {
+            pills.style.opacity = '1';
+            pills.style.maxHeight = pills.scrollHeight + 'px';
+          }
+        }
+      });
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 768) {
+        cards.forEach(card => {
+          card.classList.remove('expanded');
+          const pills = card.querySelector('.skill-pills');
+          if (pills) {
+            pills.style.maxHeight = null;
+            pills.style.opacity = null;
+          }
+        });
+      }
+    });
+  }
+
+  // ═══════════════════════════════════════════
   // INITIALIZATION
   // ═══════════════════════════════════════════
   function init() {
@@ -983,6 +1063,8 @@
     initTilt();
     initParticles();
     initAboutShape();
+    initProjectCardsMobile();
+    initSkillsAccordion();
   }
 
   if (document.readyState === 'loading') {
