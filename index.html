@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mohit Pandav — Shopify &amp; WordPress Developer</title>
+  <meta name="description"
+    content="Mohit Pandav — Shopify & WordPress Developer. Building fast, clean, mobile-first e-commerce stores & websites. Available for freelance." />
+  <meta name="author" content="Mohit Pandav" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mohit Pandav — Shopify & WordPress Developer" />
+  <meta property="og:description" content="Building fast, clean, mobile-first e-commerce stores & websites." />
+  <meta property="og:type" content="website" />
+
+  <!-- Preload fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Prevent FOUC: set background immediately -->
+  <style>
+    html {
+      background: #0A0A0B;
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <!-- ═══════════════ NAVBAR ═══════════════ -->
+  <nav class="navbar" id="navbar">
+    <a href="#" class="nav-monogram" id="nav-monogram">MP</a>
+
+    <div class="nav-links" id="nav-links">
+      <a href="#work" class="nav-link" data-section="work">
+        <span class="nav-num">[01]</span> Work
+      </a>
+      <a href="#skills" class="nav-link" data-section="skills">
+        <span class="nav-num">[02]</span> Skills
+      </a>
+      <a href="#experience" class="nav-link" data-section="experience">
+        <span class="nav-num">[03]</span> Experience
+      </a>
+      <a href="#about" class="nav-link" data-section="about">
+        <span class="nav-num">[04]</span> About
+      </a>
+      <a href="#contact" class="nav-link" data-section="contact">
+        <span class="nav-num">[05]</span> Contact
+      </a>
+    </div>
+
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ═══════════════ MOBILE MENU ═══════════════ -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="#work" class="mobile-link" onclick="closeMobile()">Work</a>
+    <a href="#skills" class="mobile-link" onclick="closeMobile()">Skills</a>
+    <a href="#experience" class="mobile-link" onclick="closeMobile()">Experience</a>
+    <a href="#about" class="mobile-link" onclick="closeMobile()">About</a>
+    <a href="#contact" class="mobile-link" onclick="closeMobile()">Contact</a>
+    <a href="mailto:pandavmohit09@gmail.com" class="mobile-cta" onclick="closeMobile()">Get in Touch →</a>
+  </div>
+
+  <!-- ═══════════════ HERO [01] ═══════════════ -->
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <div class="availability-tag" id="availability-tag">
+        <span class="availability-dot"></span>
+        Available for Freelance · June 2026
+      </div>
+
+      <h1 class="hero-title display-lg" id="hero-title">
+        <span class="line" id="hero-line1">
+          <span class="word">Shopify</span>
+          <span class="word">&amp;</span>
+          <span class="word">WordPress</span>
+        </span>
+        <span class="line ghost-text" id="hero-line2">
+          <span class="word">Developer</span><span class="word period"
+            style="color:var(--lime);-webkit-text-stroke:0;">.</span>
+        </span>
+      </h1>
+
+      <p class="hero-subtitle" id="hero-subtitle">
+        Building fast, clean, mobile-first e-commerce stores &amp; websites.
+      </p>
+
+      <div class="hero-ctas">
+        <a href="#work" class="btn-primary" id="hero-cta1">
+          View My Work <span class="arrow">↓</span>
+        </a>
+        <a href="mailto:pandavmohit09@gmail.com" class="btn-secondary" id="hero-cta2">
+          Download CV
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-canvas-wrap">
+      <canvas id="hero-canvas"></canvas>
+    </div>
+
+    <div class="scroll-indicator" id="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ STATS BAR [02] ═══════════════ -->
+  <section class="stats-bar" id="stats">
+    <div class="stats-grid">
+      <div class="stat-item" data-target="1" data-suffix="+">
+        <div class="stat-number" id="stat-1">0</div>
+        <div class="stat-label">Internship</div>
+      </div>
+      <div class="stat-item" data-target="2" data-suffix="">
+        <div class="stat-number" id="stat-2">0</div>
+        <div class="stat-label">Live Projects</div>
+      </div>
+      <div class="stat-item" data-target="7.35" data-suffix="" data-decimals="2">
+        <div class="stat-number" id="stat-3">0</div>
+        <div class="stat-label">CGPA</div>
+      </div>
+      <div class="stat-item" data-target="100" data-suffix="">
+        <div class="stat-number" id="stat-4">0</div>
+        <div class="stat-label">PageSpeed Score</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SELECTED WORK [03] ═══════════════ -->
+  <section class="work-section section" id="work">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-num">[03] Selected Work / 2025 — 2026</span>
+      </div>
+      <h2 class="h2 section-heading reveal">Work that lives on the web.</h2>
+
+      <div class="projects-grid">
+
+        <!-- Project 1: Glowify -->
+        <div class="card-wrapper" id="card-1">
+          <div class="card-inner">
+            <div class="card-front accent-lime">
+              <div class="card-top">
+                <span class="card-num">01</span>
+                <span class="card-status live">● Live Store</span>
+              </div>
+              <span class="card-type">Skincare Shopify Store</span>
+              <h3 class="card-title">Glowify</h3>
+              <p class="card-desc">Built a full D2C skincare Shopify store with custom Liquid sections, product bundles,
+                and mobile-optimized checkout.</p>
+              <span class="card-cta">View Store <span>→</span></span>
+              <span class="card-flip-hint">Flip →</span>
+            </div>
+            <div class="card-back">
+              <h4 class="card-back-title">Glowify</h4>
+              <p class="card-back-desc">Full D2C skincare Shopify store with custom Liquid sections, product bundles,
+                and mobile-optimized checkout.</p>
+              <div class="card-tech-pills">
+                <span class="tech-pill">Liquid</span>
+                <span class="tech-pill">Dawn Theme</span>
+                <span class="tech-pill">OS2.0</span>
+                <span class="tech-pill">Metafields</span>
+                <span class="tech-pill">AJAX Cart</span>
+                <span class="tech-pill">Shopify Payments</span>
+              </div>
+              <a href="https://custom-bundle-pm.shopify.com" target="_blank" rel="noopener" class="card-back-cta">View
+                Store →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: Post From US -->
+        <div class="card-wrapper" id="card-2">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-top">
+                <span class="card-num">02</span>
+                <span class="card-status live">● Live Project</span>
+              </div>
+              <span class="card-type">WordPress Blog</span>
+              <h3 class="card-title">Post From US</h3>
+              <p class="card-desc">Built a WordPress blog site with Divi Builder, fully responsive layout, and custom
+                post templates from Figma designs.</p>
+              <span class="card-cta">View Project <span>→</span></span>
+              <span class="card-flip-hint">Flip →</span>
+            </div>
+            <div class="card-back">
+              <h4 class="card-back-title">Post From US</h4>
+              <p class="card-back-desc">WordPress blog with Divi Builder, responsive layout, and custom post templates
+                from Figma designs.</p>
+              <div class="card-tech-pills">
+                <span class="tech-pill">WordPress</span>
+                <span class="tech-pill">Divi Builder</span>
+                <span class="tech-pill">CSS3</span>
+                <span class="tech-pill">Figma to Web</span>
+                <span class="tech-pill">Gutenberg</span>
+              </div>
+              <span class="card-back-cta" style="opacity:0.5;pointer-events:none;">Coming Soon</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: Minimalist (QA) -->
+        <div class="card-wrapper" id="card-3">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-top">
+                <span class="card-num">03</span>
+                <span class="card-status client-amber">● UAE Client</span>
+              </div>
+              <span class="card-type">Shopify QA Testing — UAE Client</span>
+              <h3 class="card-title">Minimalist</h3>
+              <p class="card-desc">Performed thorough QA testing on a live Shopify store for a UAE-based client —
+                cross-browser, cross-device, checkout flow, and performance.</p>
+              <span class="card-cta">ar.minimalist.ae <span>→</span></span>
+              <span class="card-flip-hint">Flip →</span>
+            </div>
+            <div class="card-back">
+              <h4 class="card-back-title">Minimalist ar.minimalist.ae</h4>
+              <p class="card-back-desc">Thorough QA testing on a live Shopify store — cross-browser, cross-device,
+                checkout flow, performance.</p>
+              <div class="card-tech-pills">
+                <span class="tech-pill">Shopify QA</span>
+                <span class="tech-pill">Cross-browser Testing</span>
+                <span class="tech-pill">Mobile Testing</span>
+                <span class="tech-pill">Checkout Flow</span>
+                <span class="tech-pill">Core Web Vitals</span>
+              </div>
+              <a href="https://ar.minimalist.ae" target="_blank" rel="noopener" class="card-back-cta">Visit
+                ar.minimalist.ae →</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: SchweizerRSG -->
+        <div class="card-wrapper" id="card-4">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="card-top">
+                <span class="card-num">04</span>
+                <span class="card-status client-blue">● US Client</span>
+              </div>
+              <span class="card-type">Shopify Catalogue — US Client</span>
+              <h3 class="card-title">SchweizerRSG</h3>
+              <p class="card-desc">Managed and structured full product catalogue for a US-based Shopify store —
+                collections, product data, tags, and inventory.</p>
+              <span class="card-cta">schweizerrsg.com <span>→</span></span>
+              <span class="card-flip-hint">Flip →</span>
+            </div>
+            <div class="card-back">
+              <h4 class="card-back-title">SchweizerRSG</h4>
+              <p class="card-back-desc">Full product catalogue management — collections, product data, tags, and
+                inventory structure.</p>
+              <div class="card-tech-pills">
+                <span class="tech-pill">Shopify Admin</span>
+                <span class="tech-pill">Product Data</span>
+                <span class="tech-pill">Collections</span>
+                <span class="tech-pill">Tags</span>
+                <span class="tech-pill">Inventory</span>
+              </div>
+              <a href="https://schweizerrsg.com" target="_blank" rel="noopener" class="card-back-cta">Visit
+                schweizerrsg.com →</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SKILLS [04] ═══════════════ -->
+  <section class="skills-section section" id="skills">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-num">[04] Skills / What I Build With</span>
+      </div>
+      <h2 class="h2 section-heading reveal">What I build with.</h2>
+
+      <div class="skills-grid">
+        <!-- Shopify -->
+        <div class="skill-card" data-tilt>
+          <div class="skill-card-header">
+            <span class="skill-dot shopify"></span>
+            <h3 class="skill-card-title">Shopify</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill">Liquid Template Language</span>
+            <span class="skill-pill">Dawn Theme Customization</span>
+            <span class="skill-pill">Nitro Theme Customization</span>
+            <span class="skill-pill">Online Store 2.0 (OS2.0)</span>
+            <span class="skill-pill">Sections & Blocks Architecture</span>
+            <span class="skill-pill">AJAX Slide-out Cart</span>
+            <span class="skill-pill">Dynamic Product Filtering</span>
+            <span class="skill-pill">Shopify Payments Integration</span>
+            <span class="skill-pill">Metafields & Metaobjects</span>
+            <span class="skill-pill">Custom Bundle Builder</span>
+            <span class="skill-pill">Shopify Admin & Product Management</span>
+            <span class="skill-pill">Collections & Tags Management</span>
+          </div>
+        </div>
+
+        <!-- WordPress -->
+        <div class="skill-card" data-tilt>
+          <div class="skill-card-header">
+            <span class="skill-dot wordpress"></span>
+            <h3 class="skill-card-title">WordPress</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill">WordPress CMS</span>
+            <span class="skill-pill">Elementor Page Builder</span>
+            <span class="skill-pill">Divi Builder</span>
+            <span class="skill-pill">Gutenberg Editor</span>
+            <span class="skill-pill">Child Theme Development</span>
+            <span class="skill-pill">Plugin Integration</span>
+            <span class="skill-pill">Custom Post Types</span>
+            <span class="skill-pill">Figma to WordPress</span>
+          </div>
+        </div>
+
+        <!-- Frontend & Tools -->
+        <div class="skill-card" data-tilt>
+          <div class="skill-card-header">
+            <span class="skill-dot frontend"></span>
+            <h3 class="skill-card-title">Frontend & Tools</h3>
+          </div>
+          <div class="skill-pills">
+            <span class="skill-pill">HTML5 & Semantic Markup</span>
+            <span class="skill-pill">CSS3 & Responsive Design</span>
+            <span class="skill-pill">JavaScript (ES6+)</span>
+            <span class="skill-pill">PHP (Basic)</span>
+            <span class="skill-pill">Figma to Web (Pixel Perfect)</span>
+            <span class="skill-pill">PageSpeed Optimization</span>
+            <span class="skill-pill">Core Web Vitals</span>
+            <span class="skill-pill">Yoast SEO</span>
+            <span class="skill-pill">Lazy Loading</span>
+            <span class="skill-pill">Mobile-First Development</span>
+            <span class="skill-pill">Cross-browser Testing</span>
+            <span class="skill-pill">Git & GitHub</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ EXPERIENCE [05] ═══════════════ -->
+  <section class="experience-section section" id="experience">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-num">[05] Experience / Where I've Worked</span>
+      </div>
+      <h2 class="h2 section-heading reveal">Where I've worked.</h2>
+
+      <div class="timeline" id="timeline">
+        <div class="timeline-line">
+          <div class="timeline-line-fill" id="timeline-fill"></div>
+        </div>
+
+        <div class="timeline-entry" id="timeline-entry-1">
+          <div class="timeline-dot" id="timeline-dot-1"></div>
+          <div class="exp-card">
+            <div class="exp-top">
+              <h3 class="exp-company">Alian Software</h3>
+              <span class="exp-badge">Internship</span>
+            </div>
+            <p class="exp-meta">Shopify & WordPress Developer · Internship · Alian Software · Anand, Gujarat</p>
+            <div class="exp-period">
+              Dec 2025 – Jun 2026
+              <span class="duration-pill">6 Months</span>
+            </div>
+            <ul class="exp-list">
+              <li class="exp-item">
+                <span class="arrow">→</span>
+                <span>Built complete Shopify storefronts using <span class="highlight">Liquid</span> with custom <span
+                    class="highlight">Sections & Blocks</span> (<span class="highlight">OS2.0</span>
+                  architecture)</span>
+              </li>
+              <li class="exp-item">
+                <span class="arrow">→</span>
+                <span>Developed <span class="highlight">AJAX</span>-powered slide-out cart and dynamic product filtering
+                  from scratch</span>
+              </li>
+              <li class="exp-item">
+                <span class="arrow">→</span>
+                <span>Customized Dawn and Nitro themes — mobile layout, brand colors, typography</span>
+              </li>
+              <li class="exp-item">
+                <span class="arrow">→</span>
+                <span>Built fully responsive WordPress pages with <span class="highlight">Elementor</span> + <span
+                    class="highlight">Divi</span> from Figma designs (pixel-perfect)</span>
+              </li>
+              <li class="exp-item">
+                <span class="arrow">→</span>
+                <span>Conducted QA testing on live Shopify store for UAE client Minimalist (ar.minimalist.ae) —
+                  cross-browser, checkout flow, mobile performance</span>
+              </li>
+              <li class="exp-item">
+                <span class="arrow">→</span>
+                <span>Managed complete product catalogue for US client SchweizerRSG (schweizerrsg.com) — collections,
+                  data, inventory structure</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ ABOUT [06] ═══════════════ -->
+  <section class="about-section section" id="about">
+    <div class="container">
+      <div class="section-label reveal">
+        <span class="section-num">[06] About</span>
+      </div>
+      <h2 class="h2 section-heading reveal">Who's behind the code.</h2>
+
+      <div class="about-layout">
+        <div class="about-text">
+          <p class="about-bio" id="about-bio">
+            I'm Mohit — a Shopify & WordPress developer from Jamnagar, Gujarat. I build e-commerce stores and fast,
+            mobile-friendly websites with clean code. Graduated B.Tech Computer Engineering from RK University (2026).
+            Currently available for freelance work.
+          </p>
+
+          <div class="edu-card" id="edu-card">
+            <div class="edu-label">Education</div>
+            <div class="edu-university">RK University</div>
+            <div class="edu-degree">B.Tech Computer Engineering</div>
+            <div class="edu-cgpa">CGPA: 7.35</div>
+            <div class="edu-years">2022 – 2026</div>
+          </div>
+
+          <div class="lang-section">
+            <div class="lang-label">Languages</div>
+            <div class="lang-chips" id="lang-chips">
+              <span class="lang-chip">English</span>
+              <span class="lang-chip">Hindi</span>
+              <span class="lang-chip">Gujarati</span>
+            </div>
+          </div>
+
+          <div class="about-contact-links">
+            <a href="mailto:pandavmohit09@gmail.com" class="about-contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <rect x="2" y="4" width="20" height="16" rx="2" />
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+              </svg>
+              pandavmohit09@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/pandav-mohit" target="_blank" rel="noopener" class="about-contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              linkedin.com/in/pandav-mohit
+            </a>
+            <a href="tel:+919558313632" class="about-contact-link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+              </svg>
+              +91 9558313632
+            </a>
+          </div>
+        </div>
+
+        <div class="about-visual">
+          <div class="about-glow"></div>
+          <canvas id="about-canvas"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CONTACT CTA [07] ═══════════════ -->
+  <section class="contact-section section" id="contact">
+    <div class="container">
+      <div class="section-label reveal" style="justify-content:center;">
+        <span class="section-num">[07] Contact</span>
+      </div>
+
+      <div class="contact-heading" id="contact-heading">
+        <h2 class="display-xl">Let's<br><span class="lime-word">build</span> something.</h2>
+      </div>
+
+      <p class="contact-subtext reveal">Open for freelance projects and full-time roles.</p>
+
+      <div class="contact-row" id="contact-row">
+        <a href="mailto:pandavmohit09@gmail.com" class="contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="2" y="4" width="20" height="16" rx="2" />
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+          </svg>
+          pandavmohit09@gmail.com
+        </a>
+        <a href="tel:+919558313632" class="contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+          </svg>
+          +91 9558313632
+        </a>
+        <a href="https://linkedin.com/in/pandav-mohit" target="_blank" rel="noopener" class="contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z" />
+            <rect x="2" y="9" width="4" height="12" />
+            <circle cx="4" cy="4" r="2" />
+          </svg>
+          linkedin.com/in/pandav-mohit
+        </a>
+        <a href="https://github.com/PandavMohit" target="_blank" rel="noopener" class="contact-item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path
+              d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
+            <path d="M9 18c-4.51 2-5-2-7-2" />
+          </svg>
+          github.com/PandavMohit
+        </a>
+      </div>
+
+      <div class="contact-location">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+          <circle cx="12" cy="10" r="3" />
+        </svg>
+        Jamnagar, Gujarat, India
+      </div>
+
+      <a href="mailto:pandavmohit09@gmail.com" class="contact-main-cta" id="contact-cta">
+        Start a Project <span class="arrow">→</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FOOTER ═══════════════ -->
+  <footer class="footer" id="footer">
+    <div class="footer-left">Mohit Pandav · Shopify &amp; WordPress Developer · 2026</div>
+    <div class="footer-right">Built with <span>Stitch</span> + <span>AntiGravity</span></div>
+  </footer>
+
+  <!-- ═══════════════ SCRIPTS ═══════════════ -->
+  <script src="script.js" defer></script>
+
+</body>
+
+</html>
