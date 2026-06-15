@@ -106,17 +106,16 @@
       const cy = H / 2;
       const scale = Math.min(W, H) * 0.25;
 
-      // '<' character — two lines forming a V pointing left
+      // '<' character — vertex on left, ends on right
       for (let i = 0; i < particleCount * 0.23; i++) {
         const t = Math.random();
+        const p = Math.random();
         let x, y;
         if (t < 0.5) {
-          const p = t * 2;
           x = cx - scale * 0.9 + p * scale * 0.5;
-          y = cy - scale * 0.5 * (1 - p);
+          y = cy - scale * 0.5 * p;
         } else {
-          const p = (t - 0.5) * 2;
-          x = cx - scale * 0.9 + (1 - p) * scale * 0.5;
+          x = cx - scale * 0.9 + p * scale * 0.5;
           y = cy + scale * 0.5 * p;
         }
         x += (Math.random() - 0.5) * 4;
@@ -135,18 +134,17 @@
         });
       }
 
-      // '>' character — two lines forming a V pointing right
+      // '>' character — vertex on right, ends on left
       for (let i = 0; i < particleCount * 0.23; i++) {
         const t = Math.random();
+        const p = Math.random();
         let x, y;
         if (t < 0.5) {
-          const p = t * 2;
-          x = cx + scale * 0.4 + p * scale * 0.5;
+          x = cx + scale * 0.9 - p * scale * 0.5;
           y = cy - scale * 0.5 * p;
         } else {
-          const p = (t - 0.5) * 2;
-          x = cx + scale * 0.4 + (1 - p) * scale * 0.5;
-          y = cy + scale * 0.5 * (1 - p);
+          x = cx + scale * 0.9 - p * scale * 0.5;
+          y = cy + scale * 0.5 * p;
         }
         x += (Math.random() - 0.5) * 4;
         y += (Math.random() - 0.5) * 4;

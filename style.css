@@ -256,7 +256,7 @@ img {
 }
 
 .section {
-  padding: 120px 0;
+  padding: 100px 0;
 }
 
 .section-label {
@@ -534,7 +534,7 @@ img {
   font-family: var(--font-body);
   font-size: 18px;
   font-weight: 400;
-  color: var(--text-secondary);
+  color: #AAAAAA; /* Increased contrast for readability */
   max-width: 480px;
   line-height: 1.7;
   opacity: 0;
@@ -657,7 +657,7 @@ img {
 }
 
 .stat-number {
-  font-family: var(--font-display);
+  font-family: var(--font-body); /* Using Inter for clean, legible numbers with correct decimal dot rendering */
   font-size: 56px;
   font-weight: 800;
   color: var(--lime);
@@ -707,6 +707,7 @@ img {
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 0.7s var(--ease-default);
+  will-change: transform;
 }
 
 .card-wrapper:hover .card-inner {
@@ -728,8 +729,8 @@ img {
 }
 
 .card-front {
-  background: var(--bg-surface);
-  border-left: 3px solid transparent;
+  background: linear-gradient(135deg, #111113, #18181B);
+  border-left: 4px solid transparent;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -742,7 +743,7 @@ img {
 }
 
 .card-back {
-  background: var(--bg-elevated);
+  background: linear-gradient(135deg, #18181B, #111113);
   transform: rotateY(180deg);
   justify-content: center;
   gap: 16px;
@@ -930,6 +931,7 @@ img {
               border-color 0.3s ease,
               box-shadow 0.3s ease;
   transform-style: preserve-3d;
+  will-change: transform, box-shadow;
 }
 
 .skill-card:hover {
@@ -1001,10 +1003,10 @@ img {
 
 .skill-pill {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   color: var(--text-secondary);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 6px 14px;
+  padding: 7px 14px;
   border-radius: 2px;
   transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease, transform 0.15s ease;
 }
@@ -1071,6 +1073,7 @@ img {
   position: relative;
   opacity: 0;
   transform: translateX(40px);
+  will-change: transform, opacity;
 }
 
 .exp-card {
@@ -1480,6 +1483,7 @@ img {
   opacity: 0;
   transform: translateY(60px);
   transition: opacity 0.7s var(--ease-default), transform 0.7s var(--ease-default);
+  will-change: transform, opacity;
 }
 
 .reveal.visible {
